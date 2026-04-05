@@ -1,0 +1,67 @@
+import cv2
+import numpy as np
+import youtube_dl
+import os
+
+# -------------------------------
+# 1. Download YouTube Video
+# -------------------------------
+video_url = "https://www.youtube.com/watch?v=FAy5AswvILM"
+video_file = "tutorial.mp4"
+
+ydl_opts = {
+    'format': 'bestvideo+bestaudio',
+    'outtmpl': video_file
+}
+
+with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+    ydl.download([video_url])
+
+# -------------------------------
+# 2. Settings for slicing
+# -------------------------------
+slice_row = 360       # vertical position of slice
+slice_height = 5      # number of pixels tall for each slice
+frame_skip = 5        # take every 5th frame
+max_height = 9000     # max height for one output image
+
+# -------------------------------
+# 3. Extract slices
+# -------------------------------
+cap = cv2.VideoCapture(video_file)
+slices = []
+frame_count = 0
+image_count = 1
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    if frame_count % frame_skip == 0:
+        row_slice = frame[slice_row:slice_row+slice_height, :, :]
+        slices.append(row_slice)
+
+        # Check if current canvas exceeds max_height
+        if len(slices) * slice_height >= max_height:
+            tall_image = np.vstack(slices)
+            output_file = f"piano_scroll_{image_count}.png"
+            cv2.imwrite(output_file, tall_image)
+            print(f"Saved {output_file} (height {tall_image.shape[0]})")
+            image_count += 1
+            slices = []  # reset slices for next image
+
+    frame_count += 1
+    if frame_count % 100 == 0:
+        print(f"Processed {frame_count} frames...")
+
+cap.release()
+
+# Save remaining slices
+if slices:
+    tall_image = np.vstack(slices)
+    output_file = f"piano_scroll_{image_count}.png"
+    cv2.imwrite(output_file, tall_image)
+    print(f"Saved {output_file} (height {tall_image.shape[0]})")
+
+print("All done!")
