@@ -57,6 +57,8 @@ play the youtube video
 
 once the video stops click on the gifcam window and press enter to stop recording
 
+you can now expand the gifcam window without it affecting the gif resolution so that you can actually see the save button
+
 save your gif ideally in the same folder as the program
 
 you might want to change the save setting in gifcam to 20 colors or even monochrome in gifcam if your gif is getting too humongous but usually its not needed
