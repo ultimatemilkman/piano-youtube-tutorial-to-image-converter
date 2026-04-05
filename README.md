@@ -1,6 +1,10 @@
 # piano-youtube-tutorial-to-image-converter
 this tool allows you to save those youtube piano synthesia tutorials where you have piano notes falling down as a single very tall image essentially like a spacial screenshot of the whole video 
 
+\
+scroll down to the bottom to see final product
+
+\
 just a disclaimer that this whole thing has been 100% vibe coded by a clueless person
 
 how to get this to work:
@@ -48,11 +52,13 @@ in gifcam press the down arrow next to the rec button and set to fps to match th
 adjust the size of the gifcam window until its as wide as the video and only 1 pixel tall (you can see the size of your gif in the top left of the gifcam window)
 
 with the video paused place the gifcam window over the piano keys in the video
-
-with the gifcam window selected press enter to start recording (since the window is too small to actually press it with your mouse) you should see frame count and delay start to increase
+\
+![initial gifcam position](tut1.PNG)
+with the gifcam window selected press enter to start recording (since the window is too small to actually press it with your mouse) you should see frame count and delay start to increase (the rec button should have a blue outline before you make the gifcam window tiny this allows the enter trick to work)
 
 smoothly move the gifcam window straight up until you reach about the middle of the video frame (this is to capture the keys in the final image)
-
+\
+![final gifcam position](tut2.PNG)
 play the youtube video
 
 once the video stops click on the gifcam window and press enter to stop recording
@@ -73,6 +79,7 @@ step 4: set up the program
 
 change the gif_file parameter to whatever you saved your gif as
 
+if its not the first image you're making you might want to rename the previous image in the folder or change the image_count parameter to a number you havent used before
 \
 step 5: save and run the program
 
@@ -104,7 +111,9 @@ A: it saved you the hassle of having to learn to read sheet music also scrubbing
 also less data usage and distractions meaning you're more likely to actually play the piano instead of doomscrolling 1000 youtube shorts
 
 plus you can see the whole song at once instead of just a few notes and you can scroll through it as fast or slow as you want and its just more intuitive to scroll vertically instead of horizontally
-
+\
+![youtube tutorial only shows 3 notes](tut3.PNG)
+![finished product](finished.png)
 
 Q: what happens if i accidentally make the gif more than 1 pixel tall
 
