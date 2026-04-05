@@ -111,7 +111,7 @@ faq:
 \
 Q: why does this exist?
 
-A: it saved you the hassle of having to learn to read sheet music also scrubbing through youtube videos can be annoying expecially on a phone where its not very accurate and sometimes the video has to reload
+A: it saves you from having to learn to read sheet music also from the hassle of scrubbing through youtube videos which can be annoying especially on a phone where its not very accurate and sometimes the video has to reload
 
 also less data usage and distractions meaning you're more likely to actually play the piano instead of doomscrolling 1000 youtube shorts
 
